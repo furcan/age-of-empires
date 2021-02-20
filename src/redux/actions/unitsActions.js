@@ -36,7 +36,11 @@ export function fetchUnits() {
 
       const data = MOCK_DATA.units;
 
-      dispatch(succeededUnits(data));
+      // a dummy delay to demonstrate the loading state
+      setTimeout(() => {
+        dispatch(succeededUnits(data));
+      }, 500);
+
     } catch (error) {
       dispatch(failed());
     }
@@ -68,7 +72,11 @@ export function filterUnits(age, costs) {
         data = data.filter(x => x.cost !== null && Object.prototype.hasOwnProperty.call(x.cost, 'Gold') && x.cost.Gold <= costs.rangeGold);
       }
 
-      dispatch(succeededUnits(data));
+      // a dummy delay to demonstrate the loading state
+      setTimeout(() => {
+        dispatch(succeededUnits(data));
+      }, 500);
+
     } catch (error) {
       dispatch(failed());
       console.log(error);

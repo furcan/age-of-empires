@@ -8,9 +8,10 @@ import TableUnits from '../../components/table/TableUnits';
 import TableLoading from '../../components/table/TableLoading';
 import TableError from '../../components/table/TableError';
 import TableNoData from '../../components/table/TableNoData';
+import FilterButtons from '../../components/filter-buttons/FilterButtons';
+import FilterRanges from '../../components/filter-ranges/FilterRanges';
 
 import './Units.scss';
-import FilterButtons from '../../components/filter/FilterButtons';
 
 function Units() {
 
@@ -154,64 +155,50 @@ function Units() {
 
   return (
     <Layout>
-      <div className="units-section">
-        <h2 className="section-title">
-          <FiSliders />
-          <span>Ages</span>
-        </h2>
-        <div className={`units-buttons ${loading ? 'units-loading' : ''}`}>
-          <FilterButtons
-            onClickHandler={filterAgesHandler}
-            classList={buttonClassesAge}
-          />
-        </div>
-      </div>
-
-      <div className="units-section">
-        <h2 className="section-title">
-          <FiSliders />
-          <span>Costs</span>
-        </h2>
-        <div className="units-filters">
-          <div>
-            <input type="checkbox" id="Wood" name="useWood" onChange={(event) => filterCostsHandler(event)} />
-            <label htmlFor="Wood">Wood</label>
-
-            <div>
-              <input type="range" id="WoodRange" min="0" max="200" step="1" value={rangeWood} onChange={(event) => rangeWoodHandler(event)} onMouseDown={() => setMouseStateWood('down')} onMouseUp={() => setMouseStateWood('up')} disabled={!filterCost.useWood} />
-              <label htmlFor="WoodRange">{`0 - ${rangeWood}`}</label>
-            </div>
-          </div>
-
-          <div>
-            <input type="checkbox" id="Food" name="useFood" onChange={(event) => filterCostsHandler(event)} />
-            <label htmlFor="Food">Food</label>
-
-            <div>
-              <input type="range" id="FoodRange" min="0" max="200" step="1" value={rangeFood} onChange={(event) => rangeFoodHandler(event)} onMouseDown={() => setMouseStateFood('down')} onMouseUp={() => setMouseStateFood('up')} disabled={!filterCost.useFood} />
-              <label htmlFor="FoodRange">{`0 - ${rangeFood}`}</label>
-            </div>
-          </div>
-
-          <div>
-            <input type="checkbox" id="Gold" name="useGold" onChange={(event) => filterCostsHandler(event)} />
-            <label htmlFor="Gold">Gold</label>
-
-            <div>
-              <input type="range" id="GoldRange" min="0" max="200" step="1" value={rangeGold} onChange={(event) => rangeGoldHandler(event)} onMouseDown={() => setMouseStateGold('down')} onMouseUp={() => setMouseStateGold('up')} disabled={!filterCost.useGold} />
-              <label htmlFor="GoldRange">{`0 - ${rangeGold}`}</label>
-            </div>
+      <div className="unit-section-wrapper">
+        <div className="units-section units-section-half">
+          <h2 className="section-title">
+            <FiSliders />
+            <span>Ages</span>
+          </h2>
+          <div className={`units-buttons ${loading ? 'units-loading' : ''}`}>
+            <FilterButtons
+              onClickHandler={filterAgesHandler}
+              classList={buttonClassesAge}
+            />
           </div>
         </div>
-      </div>
 
-      <div className="units-section">
-        <h2 className="section-title">
-          <FiList />
-          <span>Units</span>
-        </h2>
-        <div className="units-results">
-          {renderUnits()}
+        <div className="units-section units-section-half">
+          <h2 className="section-title">
+            <FiSliders />
+            <span>Costs</span>
+          </h2>
+          <div className={`units-filters ${loading ? 'units-loading' : ''}`}>
+            <FilterRanges
+              onChangeHandler={filterCostsHandler}
+              costs={filterCost}
+              valueWood={rangeWood}
+              valueFood={rangeFood}
+              valueGold={rangeGold}
+              setMouseStateWood={setMouseStateWood}
+              rangeWoodHandler={rangeWoodHandler}
+              setMouseStateFood={setMouseStateFood}
+              rangeFoodHandler={rangeFoodHandler}
+              setMouseStateGold={setMouseStateGold}
+              rangeGoldHandler={rangeGoldHandler}
+            />
+          </div>
+        </div>
+
+        <div className="units-section">
+          <h2 className="section-title">
+            <FiList />
+            <span>Units</span>
+          </h2>
+          <div className="units-results">
+            {renderUnits()}
+          </div>
         </div>
       </div>
     </Layout>
