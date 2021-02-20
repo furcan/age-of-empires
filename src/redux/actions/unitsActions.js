@@ -53,7 +53,7 @@ export function filterUnits(age, costs) {
       let data = MOCK_DATA.units;
 
       if (age !== 'All') {
-        data = data.filter(x => x.age !== null && x.age.toLocaleLowerCase('en') === age.toLocaleLowerCase('en'));
+        data = data.filter(x => x.age !== null && x.age.toLocaleLowerCase('en') === (age || '').toLocaleLowerCase('en'));
       }
 
       if (costs.useWood) {
@@ -71,6 +71,7 @@ export function filterUnits(age, costs) {
       dispatch(succeededUnits(data));
     } catch (error) {
       dispatch(failed());
+      console.log(error);
     }
   };
 }

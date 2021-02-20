@@ -1,0 +1,53 @@
+@import "../../styles/variables";
+
+.buttons-wrapper {
+  max-width: 100%;
+  display: block;
+  white-space: nowrap;
+  overflow: auto hidden;
+  padding: 8px 0;
+
+  button {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    padding: 8px 16px;
+    margin: 0 12px 8px 0;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 16px -8px rgba($color: black, $alpha: 0.3);
+    background: $light;
+    color: $dark;
+    border-radius: 8px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+
+    @media (min-width: $breakpoint-tablet) {
+      font-size: 16px;
+    }
+
+    * {
+      pointer-events: none;
+    }
+
+    i,
+    svg {
+      margin-right: 10px;
+      transform: scale(1.1);
+      transform-origin: center center;
+    }
+
+    &:hover {
+      background: $gray;
+      color: $light;
+    }
+
+    &.selected {
+      background: $dark;
+      color: $light;
+    }
+  }
+}

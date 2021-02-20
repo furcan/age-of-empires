@@ -1,23 +1,16 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { connect, useDispatch, useSelector } from 'react-redux';
+import { FiSliders, FiList } from 'react-icons/fi';
 
-import {
-  selectorUnits,
-  fetchUnits,
-  filterUnits,
-} from '../../redux/actions/unitsActions';
+import { selectorUnits, fetchUnits, filterUnits } from '../../redux/actions/unitsActions';
 import Layout from '../../components/layout/Layout';
+import TableUnits from '../../components/table/TableUnits';
+import TableLoading from '../../components/table/TableLoading';
+import TableError from '../../components/table/TableError';
+import TableNoData from '../../components/table/TableNoData';
 
 import './Units.scss';
-
-function costToStringData(input) {
-  return (JSON.stringify((input || '')) || '')
-    .replace(/{"/, '')
-    .replace(/":/gmi, ': ')
-    .replace(/,"/gmi, ', ')
-    .replace(/}/gmi, '').trim();
-}
+import FilterButtons from '../../components/filter-buttons/FilterButtons';
 
 function Units() {
 
@@ -52,51 +45,23 @@ function Units() {
   }, [dispatch]);
   // fetch data: end
 
-  console.log('UNITS: ', data);
-
   // render data: begin
   const renderUnits = () => {
-    if (loading) return <p>Loading units...</p>;
-    if (error) return <p>Unable to display units.</p>;
+    if (loading) return <TableLoading />;
+    if (error) return <TableError />;
     return (
       data?.length > 0 ?
-        <table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Age</th>
-              <th>Costs</th>
-              <th>Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              data.map((unit) => <tr key={unit.id}>
-                <td>{unit.id}</td>
-                <td>{unit.name}</td>
-                <td>{unit.age}</td>
-                <td>{unit.cost !== null ? costToStringData(unit.cost) : '...'}</td>
-                <td>
-                  <Link key={unit.id} to={`${process.env.PUBLIC_URL}/units/${unit.id}`}>
-                    <button type="button">Go Details</button>
-                  </Link>
-                </td>
-              </tr>)
-            }
-          </tbody>
-        </table>
+        <TableUnits data={data} />
         :
-        <p>No unit found.</p>
+        <TableNoData />
     );
   };
   // render data: end
 
   // event handlers: begin
   const filterAgesHandler = (event) => {
-    setFilterAge(event.target.name);
-
-    var resetClasses = {
+    const type = event.target.name;
+    const resetClasses = {
       All: false,
       Dark: false,
       Feudal: false,
@@ -105,8 +70,10 @@ function Units() {
     };
     setButtonClassesAge({
       ...resetClasses,
-      [event.target.name]: true,
+      [type]: true,
     });
+
+    setFilterAge(type);
   };
 
   const filterCostsHandler = (event) => {
@@ -177,51 +144,75 @@ function Units() {
   }, [mouseStateGold]);
   // range gold: end
 
+  // dev log: begin
+  useEffect(() => {
+    if (process.env.NODE_ENV === 'development') {
+      console.log('DEVLOG => UNITS: ', data);
+    }
+  }, [data]);
+  // dev log: end
+
   return (
     <Layout>
-      <h1>Units</h1>
-      <div className="units-buttons">
-        <button type="button" name="All" onClick={(event) => filterAgesHandler(event)} className={buttonClassesAge.All ? 'selected' : ''}>All</button>
-        <button type="button" name="Dark" onClick={(event) => filterAgesHandler(event)} className={buttonClassesAge.Dark ? 'selected' : ''}>Dark</button>
-        <button type="button" name="Feudal" onClick={(event) => filterAgesHandler(event)} className={buttonClassesAge.Feudal ? 'selected' : ''}>Feudal</button>
-        <button type="button" name="Castle" onClick={(event) => filterAgesHandler(event)} className={buttonClassesAge.Castle ? 'selected' : ''}>Castle</button>
-        <button type="button" name="Imperial" onClick={(event) => filterAgesHandler(event)} className={buttonClassesAge.Imperial ? 'selected' : ''}>Imperial</button>
-      </div>
-
-      <div className="units-filters">
-        <div>
-          <input type="checkbox" id="Wood" name="useWood" onChange={(event) => filterCostsHandler(event)} />
-          <label htmlFor="Wood">Wood</label>
-
-          <div>
-            <input type="range" id="WoodRange" min="0" max="200" step="1" value={rangeWood} onChange={(event) => rangeWoodHandler(event)} onMouseDown={() => setMouseStateWood('down')} onMouseUp={() => setMouseStateWood('up')} disabled={!filterCost.useWood} />
-            <label htmlFor="WoodRange">{`0 - ${rangeWood}`}</label>
-          </div>
-        </div>
-
-        <div>
-          <input type="checkbox" id="Food" name="useFood" onChange={(event) => filterCostsHandler(event)} />
-          <label htmlFor="Food">Food</label>
-
-          <div>
-            <input type="range" id="FoodRange" min="0" max="200" step="1" value={rangeFood} onChange={(event) => rangeFoodHandler(event)} onMouseDown={() => setMouseStateFood('down')} onMouseUp={() => setMouseStateFood('up')} disabled={!filterCost.useFood} />
-            <label htmlFor="FoodRange">{`0 - ${rangeFood}`}</label>
-          </div>
-        </div>
-
-        <div>
-          <input type="checkbox" id="Gold" name="useGold" onChange={(event) => filterCostsHandler(event)} />
-          <label htmlFor="Gold">Gold</label>
-
-          <div>
-            <input type="range" id="GoldRange" min="0" max="200" step="1" value={rangeGold} onChange={(event) => rangeGoldHandler(event)} onMouseDown={() => setMouseStateGold('down')} onMouseUp={() => setMouseStateGold('up')} disabled={!filterCost.useGold} />
-            <label htmlFor="GoldRange">{`0 - ${rangeGold}`}</label>
-          </div>
+      <div className="units-section">
+        <h2 className="section-title">
+          <FiSliders />
+          <span>Ages</span>
+        </h2>
+        <div className={`units-buttons ${loading ? 'units-loading' : ''}`}>
+          <FilterButtons
+            onClickHandler={filterAgesHandler}
+            classList={buttonClassesAge}
+          />
         </div>
       </div>
 
-      <div className="units-results">
-        {renderUnits()}
+      <div className="units-section">
+        <h2 className="section-title">
+          <FiSliders />
+          <span>Costs</span>
+        </h2>
+        <div className="units-filters">
+          <div>
+            <input type="checkbox" id="Wood" name="useWood" onChange={(event) => filterCostsHandler(event)} />
+            <label htmlFor="Wood">Wood</label>
+
+            <div>
+              <input type="range" id="WoodRange" min="0" max="200" step="1" value={rangeWood} onChange={(event) => rangeWoodHandler(event)} onMouseDown={() => setMouseStateWood('down')} onMouseUp={() => setMouseStateWood('up')} disabled={!filterCost.useWood} />
+              <label htmlFor="WoodRange">{`0 - ${rangeWood}`}</label>
+            </div>
+          </div>
+
+          <div>
+            <input type="checkbox" id="Food" name="useFood" onChange={(event) => filterCostsHandler(event)} />
+            <label htmlFor="Food">Food</label>
+
+            <div>
+              <input type="range" id="FoodRange" min="0" max="200" step="1" value={rangeFood} onChange={(event) => rangeFoodHandler(event)} onMouseDown={() => setMouseStateFood('down')} onMouseUp={() => setMouseStateFood('up')} disabled={!filterCost.useFood} />
+              <label htmlFor="FoodRange">{`0 - ${rangeFood}`}</label>
+            </div>
+          </div>
+
+          <div>
+            <input type="checkbox" id="Gold" name="useGold" onChange={(event) => filterCostsHandler(event)} />
+            <label htmlFor="Gold">Gold</label>
+
+            <div>
+              <input type="range" id="GoldRange" min="0" max="200" step="1" value={rangeGold} onChange={(event) => rangeGoldHandler(event)} onMouseDown={() => setMouseStateGold('down')} onMouseUp={() => setMouseStateGold('up')} disabled={!filterCost.useGold} />
+              <label htmlFor="GoldRange">{`0 - ${rangeGold}`}</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="units-section">
+        <h2 className="section-title">
+          <FiList />
+          <span>Units</span>
+        </h2>
+        <div className="units-results">
+          {renderUnits()}
+        </div>
       </div>
     </Layout>
   );

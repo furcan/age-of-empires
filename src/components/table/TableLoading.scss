@@ -1,0 +1,42 @@
+@import "../../styles/variables";
+
+.table-loading {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  i,
+  svg {
+    margin: 0;
+    padding: 0;
+    font-size: 36px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: table-loading 1s linear 0s infinite;
+    color: $gray;
+
+    @keyframes table-loading {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  p {
+    margin: 10px 0 0;
+    padding: 0;
+    font-size: 13px;
+    color: $gray;
+  }
+}

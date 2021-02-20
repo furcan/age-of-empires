@@ -1,70 +1,42 @@
-.units-buttons {
-  border: 1px dashed lightgray;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px 0;
-  padding: 16px;
+@import "../../styles/variables";
 
-  button {
-    cursor: pointer;
-    transition: all 0.25s ease-in-out;
-    padding: 8px 16px;
-    margin: 0 8px;
-    border: none;
-    outline: none;
-    box-shadow: 0 0 20px -10px rgba($color: black, $alpha: 0.5);
-    background: lightgray;
-    color: black;
-    border-radius: 8px;
+.units-section {
+  margin: 40px 0;
+  padding: 20px;
+  box-shadow: 0 0 40px -20px rgba($color: $black, $alpha: 0.2);
+  border-radius: 20px;
+  background: $white;
+
+  .section-title {
+    font-size: 20px;
+    line-height: 1.2;
     font-weight: 600;
-    font-size: 16px;
+    margin: 0 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 
-    &:hover {
-      background: gray;
-      color: white;
-    }
-
-    &.selected {
-      background: black;
-      color: white;
+    i,
+    svg {
+      transform: scale(1.1);
+      margin-right: 10px;
+      color: $yellow;
     }
   }
-}
 
-.units-filters {
-  border: 1px dashed lightgray;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 20px 0;
-  padding: 16px;
-}
+  .units-buttons,
+  .units-filters,
+  .units-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
 
-.units-results {
-  border: 1px dashed lightgray;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 20px 0;
-  padding: 16px;
-
-  table {
-    width: 100%;
-    text-align: center;
-    border-spacing: 0;
-
-    th {
-      position: sticky;
-      top: 0;
-      background: lightgray;
-    }
-
-    th,
-    td {
-      padding: 8px 16px;
+    &.units-loading {
+      opacity: 0.5;
+      pointer-events: none;
+      user-select: none;
     }
   }
 }
