@@ -1,4 +1,4 @@
-import { FiGrid } from 'react-icons/fi';
+import { FiList } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 import Layout from '../../components/layout/Layout';
@@ -14,7 +14,7 @@ function Home() {
         <div className="aoe-slider-box">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
           <Link to={`${process.env.PUBLIC_URL}/units`} className="aoe-slider-cta">
-            <FiGrid />
+            <FiList />
             <span>Units</span>
           </Link>
         </div>

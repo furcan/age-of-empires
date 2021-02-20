@@ -1,4 +1,4 @@
-import { FiHome, FiGrid } from 'react-icons/fi';
+import { FiHome, FiList } from 'react-icons/fi';
 import Home from '../pages/home/Home';
 import Units from '../pages/units/Units';
 import UnitDetail from '../pages/unit-detail/UnitDetail';
@@ -20,7 +20,7 @@ const Routes = [
     strict: true,
     name: 'Units',
     showInNavbar: true,
-    icon: <FiGrid />,
+    icon: <FiList />,
   },
   {
     path: `${process.env.PUBLIC_URL}/units/:id`,

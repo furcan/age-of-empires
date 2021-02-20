@@ -57,7 +57,7 @@
     .aoe-slider-cta {
       padding: 20px 40px;
       font-size: 20px;
-      font-weight: 600;
+      font-weight: 500;
       border-radius: 100px;
       display: flex;
       flex-wrap: wrap;
@@ -69,6 +69,7 @@
       @media (min-width: $breakpoint-tablet) {
         background: $light;
         color: $dark;
+        font-weight: 600;
       }
 
       &:hover {
@@ -77,6 +78,8 @@
 
       i,
       svg {
+        transform: scale(1.2);
+        transform-origin: center center;
         margin-right: 16px;
       }
     }
