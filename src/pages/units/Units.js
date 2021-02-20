@@ -145,14 +145,6 @@ function Units() {
   }, [mouseStateGold]);
   // range gold: end
 
-  // dev log: begin
-  useEffect(() => {
-    if (process.env.NODE_ENV === 'development') {
-      console.log('DEVLOG => UNITS: ', data);
-    }
-  }, [data]);
-  // dev log: end
-
   return (
     <Layout>
       <div className="unit-section-wrapper">

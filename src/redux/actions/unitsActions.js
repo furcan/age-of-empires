@@ -79,7 +79,6 @@ export function filterUnits(age, costs) {
 
     } catch (error) {
       dispatch(failed());
-      console.log(error);
     }
   };
 }

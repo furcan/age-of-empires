@@ -51,10 +51,10 @@
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 20px -12px rgba($color: $dark, $alpha: 0.25);
+            box-shadow: 0 0 20px -10px rgba($color: $dark, $alpha: 0.25);
             border-radius: 8px;
-            border: 1px solid rgba($color: $dark, $alpha: 1);
             font-weight: 500;
+            background: $white;
 
             @media (min-width: $breakpoint-tablet) {
               margin: 8px;
@@ -72,7 +72,7 @@
 
             &:hover {
               background: $dark;
-              color: $light;
+              color: $white;
             }
           }
         }

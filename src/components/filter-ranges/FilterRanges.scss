@@ -11,10 +11,16 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin: 0 0 20px;
+
+    &:last-child {
+      margin: 0;
+    }
 
     @media (min-width: $breakpoint-mobile) {
       width: 33.3333%;
       padding: 10px;
+      margin: 0;
     }
 
     .range-check {

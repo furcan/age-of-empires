@@ -9,11 +9,15 @@
 
   .units-section {
     width: 100%;
-    margin: 20px 0;
+    margin: 20px 0 0;
     padding: 20px;
     box-shadow: 0 0 40px -20px rgba($color: $black, $alpha: 0.2);
     border-radius: 20px;
     background: $white;
+
+    @media (min-width: $breakpoint-desktop) {
+      margin: 20px 0;
+    }
 
     &.units-section-half {
       @media (min-width: $breakpoint-desktop) {
