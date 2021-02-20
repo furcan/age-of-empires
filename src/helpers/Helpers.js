@@ -7,3 +7,7 @@ export const costObjectToPlainText = (input) => {
     .replace(/}/gmi, '').trim();
 };
 // from the cost object to the plain text table data: end
+
+export const emptyData = (params) => {
+  return params || '-';
+};

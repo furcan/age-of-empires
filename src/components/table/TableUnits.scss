@@ -94,8 +94,8 @@
       button {
         padding: 8px 16px;
         border: none;
-        background: $dark;
-        color: $light;
+        background: $yellow;
+        color: $dark;
         border-radius: 8px;
         font-weight: 500;
         font-size: 11px;
@@ -106,8 +106,8 @@
         }
 
         &:hover {
-          background: $yellow;
-          color: $dark;
+          background: $dark;
+          color: $light;
         }
       }
     }

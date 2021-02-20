@@ -30,7 +30,7 @@ function TableUnits(props) {
                 </Link>
               </td>
               <td>{unit.age}</td>
-              <td>{unit.cost !== null ? costObjectToPlainText(unit.cost) : '...'}</td>
+              <td>{unit.cost !== null ? costObjectToPlainText(unit.cost) : '-'}</td>
               <td>
                 <Link key={unit.id} to={`${process.env.PUBLIC_URL}/units/${unit.id}`}>
                   <button type="button">Show Details</button>

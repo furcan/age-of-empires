@@ -1,4 +1,5 @@
-import { FiHome, FiList } from 'react-icons/fi';
+import { FiList } from 'react-icons/fi';
+import { GiSpartanHelmet } from 'react-icons/gi';
 import Home from '../pages/home/Home';
 import Units from '../pages/units/Units';
 import UnitDetail from '../pages/unit-detail/UnitDetail';
@@ -11,7 +12,7 @@ const Routes = [
     strict: true,
     name: 'Home',
     showInNavbar: true,
-    icon: <FiHome />,
+    icon: <GiSpartanHelmet />,
   },
   {
     path: `${process.env.PUBLIC_URL}/units`,

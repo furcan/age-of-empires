@@ -1,0 +1,97 @@
+@import "../../styles/_variables";
+
+.unit-detail {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 10px auto 40px;
+  width: 100%;
+  max-width: 520px;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin: 20px auto 40px;
+  }
+
+  .unit-banner {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .unit-title {
+      position: absolute;
+      width: 100%;
+      font-size: 24px;
+      text-shadow: 0 0 20px rgba($color: $black, $alpha: 0.4);
+      line-height: 1.2;
+      font-weight: 600;
+      text-align: center;
+      color: $white;
+      margin: 0;
+      padding: 0 25px;
+
+      @media (min-width: $breakpoint-tablet) {
+        font-size: 32px;
+        padding: 0 40px;
+      }
+    }
+  }
+
+  .unit-specs {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 20px auto 0;
+    box-shadow: 0 0 20px -10px rgba($color: $dark, $alpha: 0.2);
+
+    .spec {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      border: 1px dashed $light-gray;
+      background: $white;
+
+      &:not(:last-child) {
+        border-bottom: 0;
+      }
+
+      &:first-child {
+        border-radius: 8px 8px 0 0;
+      }
+
+      &:last-child {
+        border-radius: 0 0 8px 8px;
+      }
+
+      p {
+        line-height: 1.4;
+        margin: 0;
+        padding: 10px 20px;
+      }
+
+      p.name {
+        width: 40%;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      p.value {
+        width: 60%;
+        font-size: 13px;
+        font-weight: 500;
+        border-left: 1px dashed $light-gray;
+      }
+    }
+  }
+}

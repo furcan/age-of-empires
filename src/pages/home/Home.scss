@@ -54,17 +54,21 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      background: $dark;
-      color: $light;
+      background: $yellow;
+      color: $dark;
 
       @media (min-width: $breakpoint-tablet) {
-        background: $light;
-        color: $dark;
         font-weight: 600;
       }
 
       &:hover {
-        background: $yellow;
+        background: $dark;
+        color: $light;
+
+        @media (min-width: $breakpoint-tablet) {
+          background: $light;
+          color: $dark;
+        }
       }
 
       i,
