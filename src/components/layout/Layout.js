@@ -6,13 +6,13 @@ import './Layout.scss';
 
 function Layout({ children }) {
   return (
-    <div className="aoa-layout">
-      <div className="aoa-container">
-        <header className="aoa-header">
-          <div className="aoa-logo">
-            <img src="/assets/images/aoa-logo.png" width="200" height="106" alt="AOA Logo" />
+    <div className="aoe-layout">
+      <div className="aoe-container">
+        <header className="aoe-header">
+          <div className="aoe-logo">
+            <img src="/assets/images/aoe-logo.png" width="200" height="106" alt="AOA Logo" />
           </div>
-          <nav className="aoa-navbar">
+          <nav className="aoe-navbar">
             <ul>
               {
                 Routes.map((item, index) => {
@@ -32,7 +32,7 @@ function Layout({ children }) {
         </header>
       </div>
 
-      <div className="aoa-container">
+      <div className="aoe-container">
         {children}
       </div>
       {

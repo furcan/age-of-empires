@@ -1,6 +1,6 @@
 @import "../../styles/variables";
 
-.aoa-layout {
+.aoe-layout {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -14,14 +14,14 @@
     padding: 0 20px;
   }
 
-  .aoa-container {
+  .aoe-container {
     width: 100%;
     max-width: 1240px;
     margin: auto;
   }
 }
 
-.aoa-header {
+.aoe-header {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -35,7 +35,7 @@
     border-radius: 0 0 40px 40px;
   }
 
-  .aoa-logo {
+  .aoe-logo {
     width: 160px;
 
     @media (min-width: $breakpoint-tablet) {
@@ -43,7 +43,7 @@
     }
   }
 
-  .aoa-navbar {
+  .aoe-navbar {
     max-width: calc(100% - 200px);
 
     ul {

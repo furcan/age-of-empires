@@ -8,12 +8,12 @@ import './Home.scss';
 function Home() {
   return (
     <Layout>
-      <div className="aoa-slider">
-        <img className="aoa-slider-img" src="/assets/images/aoa-home-background-filtered.png" width="1240" height="698" alt="AOA Home Slider" />
+      <div className="aoe-slider">
+        <img className="aoe-slider-img" src="/assets/images/aoe-home-background-filtered.png" width="1240" height="698" alt="AOA Home Slider" />
 
-        <div className="aoa-slider-box">
+        <div className="aoe-slider-box">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-          <Link to={`${process.env.PUBLIC_URL}/units`} className="aoa-slider-cta">
+          <Link to={`${process.env.PUBLIC_URL}/units`} className="aoe-slider-cta">
             <FiGrid />
             <span>Units</span>
           </Link>

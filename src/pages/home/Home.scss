@@ -1,6 +1,6 @@
 @import "../../styles/variables";
 
-.aoa-slider {
+.aoe-slider {
   margin: 50px 0;
   position: relative;
   display: flex;
@@ -12,7 +12,7 @@
     margin: 40px 0;
   }
 
-  .aoa-slider-img {
+  .aoe-slider-img {
     transform: scale(1.5);
     transform-origin: center center;
 
@@ -21,7 +21,7 @@
     }
   }
 
-  .aoa-slider-box {
+  .aoe-slider-box {
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -52,7 +52,7 @@
       }
     }
 
-    .aoa-slider-cta {
+    .aoe-slider-cta {
       padding: 20px 40px;
       font-size: 20px;
       font-weight: 600;
