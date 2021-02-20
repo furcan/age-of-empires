@@ -3,7 +3,7 @@ import { connect, useSelector, useDispatch } from 'react-redux';
 
 import { selectorUnits, fetchUnit } from '../../redux/actions/unitsActions';
 import Layout from '../../components/layout/Layout';
-import NotFound from '../../NotFound';
+import NotFound from '../not-found/NotFound';
 
 function UnitDetail(props) {
   const unitId = Math.round(props?.match?.params?.id || 0);

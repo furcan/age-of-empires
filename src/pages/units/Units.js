@@ -10,7 +10,7 @@ import TableError from '../../components/table/TableError';
 import TableNoData from '../../components/table/TableNoData';
 
 import './Units.scss';
-import FilterButtons from '../../components/filter-buttons/FilterButtons';
+import FilterButtons from '../../components/filter/FilterButtons';
 
 function Units() {
 

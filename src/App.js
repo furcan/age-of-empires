@@ -1,5 +1,5 @@
 import { Route, Switch } from 'react-router-dom';
-import NotFound from './NotFound';
+import NotFound from './pages/not-found/NotFound';
 import Routes from './routes/Routes';
 
 function App() {
