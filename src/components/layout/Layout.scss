@@ -7,91 +7,16 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 0 10px;
   overflow-x: hidden;
-
-  @media (min-width: $breakpoint-tablet) {
-    padding: 0 20px;
-  }
 
   .aoe-container {
     width: 100%;
     max-width: 1240px;
     margin: auto;
-  }
-}
-
-.aoe-header {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 12px;
-
-  @media (min-width: $breakpoint-tablet) {
-    padding: 20px 40px;
-    box-shadow: 0 20px 20px -20px rgba($color: black, $alpha: 0.1);
-    border-radius: 0 0 40px 40px;
-  }
-
-  .aoe-logo {
-    width: 160px;
+    padding: 0 10px;
 
     @media (min-width: $breakpoint-tablet) {
-      width: 200px;
-    }
-  }
-
-  .aoe-navbar {
-    max-width: calc(100% - 200px);
-
-    ul {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-
-      li {
-        display: inline-flex;
-        flex-wrap: wrap;
-        align-items: center;
-        flex-grow: 1;
-        font-size: 16px;
-
-        a {
-          margin: 6px;
-          padding: 8px 12px;
-          display: inline-flex;
-          flex-grow: 1;
-          flex-wrap: wrap;
-          align-items: center;
-          justify-content: center;
-          box-shadow: 0 0 20px -12px rgba($color: $dark, $alpha: 0.25);
-          border-radius: 8px;
-          border: 1px solid rgba($color: $dark, $alpha: 1);
-          font-weight: 500;
-
-          @media (min-width: $breakpoint-tablet) {
-            margin: 8px;
-            padding: 12px 20px;
-          }
-
-          i,
-          svg {
-            margin-right: 8px;
-
-            @media (min-width: $breakpoint-tablet) {
-              margin-right: 12px;
-            }
-          }
-
-          &:hover {
-            background: $dark;
-            color: $light;
-          }
-        }
-      }
+      padding: 0 20px;
     }
   }
 }
