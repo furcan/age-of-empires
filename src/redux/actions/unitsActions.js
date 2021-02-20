@@ -48,19 +48,19 @@ export function filterUnits(age, costs) {
       console.log(age, costs);
 
       if (age !== 'All') {
-        data = data.filter(x => x.age.toLocaleLowerCase('en') === age.toLocaleLowerCase('en'));
+        data = data.filter(x => x.age !== null && x.age.toLocaleLowerCase('en') === age.toLocaleLowerCase('en'));
       }
 
-      if (costs.Food) {
-        data = data.filter(x => x.cost !== null && Object.prototype.hasOwnProperty.call(x.cost, 'Food') && x.cost.Food > 10);
+      if (costs.useWood) {
+        data = data.filter(x => x.cost !== null && Object.prototype.hasOwnProperty.call(x.cost, 'Wood') && x.cost.Wood <= costs.rangeWood);
       }
 
-      if (costs.Gold) {
-        data = data.filter(x => x.cost !== null && Object.prototype.hasOwnProperty.call(x.cost, 'Gold'));
+      if (costs.useFood) {
+        data = data.filter(x => x.cost !== null && Object.prototype.hasOwnProperty.call(x.cost, 'Food') && x.cost.Food <= costs.rangeFood);
       }
 
-      if (costs.Wood) {
-        data = data.filter(x => x.cost !== null && Object.prototype.hasOwnProperty.call(x.cost, 'Wood'));
+      if (costs.useGold) {
+        data = data.filter(x => x.cost !== null && Object.prototype.hasOwnProperty.call(x.cost, 'Gold') && x.cost.Gold <= costs.rangeGold);
       }
 
       console.log(data);

@@ -35,9 +35,12 @@ function Units() {
 
   // filter => costs: begin
   const [filterCost, setFilterCost] = useState({
-    Wood: false,
-    Food: false,
-    Gold: false,
+    useWood: false,
+    rangeWood: 200,
+    useFood: false,
+    rangeFood: 200,
+    useGold: false,
+    rangeGold: 200,
   });
   // filter => costs: end
 
@@ -110,6 +113,60 @@ function Units() {
   }, [filterAge, filterCost]);
   // update data by state: end
 
+  // range wood: begin
+  const [rangeWood, setRangeWood] = useState(200);
+  const [mouseStateWood, setMouseStateWood] = useState(null);
+
+  const rangeWoodHandler = (event) => {
+    setRangeWood(Math.round(event.target.value));
+  };
+
+  useEffect(() => {
+    if (mouseStateWood === 'up') {
+      setFilterCost((prevState) => ({
+        ...prevState,
+        rangeWood: rangeWood,
+      }));
+    }
+  }, [mouseStateWood]);
+  // range wood: end
+
+  // range food: begin
+  const [rangeFood, setRangeFood] = useState(200);
+  const [mouseStateFood, setMouseStateFood] = useState(null);
+
+  const rangeFoodHandler = (event) => {
+    setRangeFood(Math.round(event.target.value));
+  };
+
+  useEffect(() => {
+    if (mouseStateFood === 'up') {
+      setFilterCost((prevState) => ({
+        ...prevState,
+        rangeFood: rangeFood,
+      }));
+    }
+  }, [mouseStateFood]);
+  // range food: end
+
+  // range gold: begin
+  const [rangeGold, setRangeGold] = useState(200);
+  const [mouseStateGold, setMouseStateGold] = useState(null);
+
+  const rangeGoldHandler = (event) => {
+    setRangeGold(Math.round(event.target.value));
+  };
+
+  useEffect(() => {
+    if (mouseStateGold === 'up') {
+      setFilterCost((prevState) => ({
+        ...prevState,
+        rangeGold: rangeGold,
+      }));
+    }
+  }, [mouseStateGold]);
+  // range gold: end
+
   return (
     <div>
       <h1>Units</h1>
@@ -123,18 +180,33 @@ function Units() {
 
       <div className="units-filters">
         <div>
-          <input id="Wood" name="Wood" type="checkbox" onChange={(event) => filterCostsHandler(event)} />
+          <input type="checkbox" id="Wood" name="useWood" onChange={(event) => filterCostsHandler(event)} />
           <label htmlFor="Wood">Wood</label>
+
+          <div>
+            <input type="range" id="WoodRange" min="0" max="200" step="1" value={rangeWood} onChange={(event) => rangeWoodHandler(event)} onMouseDown={() => setMouseStateWood('down')} onMouseUp={() => setMouseStateWood('up')} disabled={!filterCost.useWood} />
+            <label htmlFor="WoodRange">{`0 - ${rangeWood}`}</label>
+          </div>
         </div>
 
         <div>
-          <input id="Food" name="Food" type="checkbox" onChange={(event) => filterCostsHandler(event)} />
+          <input type="checkbox" id="Food" name="useFood" onChange={(event) => filterCostsHandler(event)} />
           <label htmlFor="Food">Food</label>
+
+          <div>
+            <input type="range" id="FoodRange" min="0" max="200" step="1" value={rangeFood} onChange={(event) => rangeFoodHandler(event)} onMouseDown={() => setMouseStateFood('down')} onMouseUp={() => setMouseStateFood('up')} disabled={!filterCost.useFood} />
+            <label htmlFor="FoodRange">{`0 - ${rangeFood}`}</label>
+          </div>
         </div>
 
         <div>
-          <input id="Gold" name="Gold" type="checkbox" onChange={(event) => filterCostsHandler(event)} />
+          <input type="checkbox" id="Gold" name="useGold" onChange={(event) => filterCostsHandler(event)} />
           <label htmlFor="Gold">Gold</label>
+
+          <div>
+            <input type="range" id="GoldRange" min="0" max="200" step="1" value={rangeGold} onChange={(event) => rangeGoldHandler(event)} onMouseDown={() => setMouseStateGold('down')} onMouseUp={() => setMouseStateGold('up')} disabled={!filterCost.useGold} />
+            <label htmlFor="GoldRange">{`0 - ${rangeGold}`}</label>
+          </div>
         </div>
       </div>
 
