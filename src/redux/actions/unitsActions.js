@@ -1,22 +1,29 @@
 import MOCK_DATA from '../../mock/age-of-empires-units.json';
 
 export const selectorUnits = (state) => state.units;
+export const selectorState = (state) => state;
 
 export const PROCESSING = 'PROCESSING';
 export const FAILED = 'FAILED';
-export const SUCCEEDED = 'SUCCEEDED';
+export const SUCCEEDED_UNITS = 'SUCCEEDED_UNITS';
+export const SUCCEEDED_UNIT = 'SUCCEEDED_UNIT';
 
 export const processing = () => ({
   type: PROCESSING,
 });
 
-export const succeeded = (data) => ({
-  type: SUCCEEDED,
+export const failed = () => ({
+  type: FAILED,
+});
+
+export const succeededUnits = (data) => ({
+  type: SUCCEEDED_UNITS,
   payload: data,
 });
 
-export const failed = () => ({
-  type: FAILED,
+export const succeededUnit = (unit) => ({
+  type: SUCCEEDED_UNIT,
+  payload: unit,
 });
 
 export function fetchUnits() {
@@ -29,7 +36,7 @@ export function fetchUnits() {
 
       const data = MOCK_DATA.units;
 
-      dispatch(succeeded(data));
+      dispatch(succeededUnits(data));
     } catch (error) {
       dispatch(failed());
     }
@@ -44,8 +51,6 @@ export function filterUnits(age, costs) {
       // const data = await response.json();
 
       let data = MOCK_DATA.units;
-
-      console.log(age, costs);
 
       if (age !== 'All') {
         data = data.filter(x => x.age !== null && x.age.toLocaleLowerCase('en') === age.toLocaleLowerCase('en'));
@@ -63,9 +68,26 @@ export function filterUnits(age, costs) {
         data = data.filter(x => x.cost !== null && Object.prototype.hasOwnProperty.call(x.cost, 'Gold') && x.cost.Gold <= costs.rangeGold);
       }
 
-      console.log(data);
+      dispatch(succeededUnits(data));
+    } catch (error) {
+      dispatch(failed());
+    }
+  };
+}
 
-      dispatch(succeeded(data));
+export function fetchUnit(id) {
+  return async (dispatch) => {
+    dispatch(processing());
+
+    try {
+      // const response = await fetch('https://furcan.net/units?id=1');
+      // const data = await response.json();
+
+      const data = MOCK_DATA.units;
+
+      const unit = data.find(x => x.id === id);
+
+      dispatch(succeededUnit(unit));
     } catch (error) {
       dispatch(failed());
     }

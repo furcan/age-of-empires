@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { connect, useDispatch, useSelector } from 'react-redux';
 
 import {
@@ -6,6 +7,7 @@ import {
   fetchUnits,
   filterUnits,
 } from '../../redux/actions/unitsActions';
+import Layout from '../../components/layout/Layout';
 
 import './Units.scss';
 
@@ -50,12 +52,14 @@ function Units() {
   }, [dispatch]);
   // fetch data: end
 
+  console.log('UNITS: ', data);
+
   // render data: begin
   const renderUnits = () => {
     if (loading) return <p>Loading units...</p>;
     if (error) return <p>Unable to display units.</p>;
     return (
-      data.length > 0 ?
+      data?.length > 0 ?
         <table>
           <thead>
             <tr>
@@ -63,6 +67,7 @@ function Units() {
               <th>Name</th>
               <th>Age</th>
               <th>Costs</th>
+              <th>Details</th>
             </tr>
           </thead>
           <tbody>
@@ -72,12 +77,17 @@ function Units() {
                 <td>{unit.name}</td>
                 <td>{unit.age}</td>
                 <td>{unit.cost !== null ? costToStringData(unit.cost) : '...'}</td>
+                <td>
+                  <Link key={unit.id} to={`${process.env.PUBLIC_URL}/units/${unit.id}`}>
+                    <button type="button">Go Details</button>
+                  </Link>
+                </td>
               </tr>)
             }
           </tbody>
         </table>
         :
-        <p>No data</p>
+        <p>No unit found.</p>
     );
   };
   // render data: end
@@ -168,7 +178,7 @@ function Units() {
   // range gold: end
 
   return (
-    <div>
+    <Layout>
       <h1>Units</h1>
       <div className="units-buttons">
         <button type="button" name="All" onClick={(event) => filterAgesHandler(event)} className={buttonClassesAge.All ? 'selected' : ''}>All</button>
@@ -213,7 +223,7 @@ function Units() {
       <div className="units-results">
         {renderUnits()}
       </div>
-    </div>
+    </Layout>
   );
 }
 

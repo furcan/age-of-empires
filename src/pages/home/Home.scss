@@ -1,0 +1,82 @@
+@import "../../styles/variables";
+
+.aoa-slider {
+  margin: 50px 0;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin: 40px 0;
+  }
+
+  .aoa-slider-img {
+    transform: scale(1.5);
+    transform-origin: center center;
+
+    @media (min-width: $breakpoint-tablet) {
+      transform: scale(1);
+    }
+  }
+
+  .aoa-slider-box {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 480px;
+    margin: 40px auto 0;
+    padding: 10px 20px;
+    border-radius: 20px;
+
+    @media (min-width: $breakpoint-tablet) {
+      position: absolute;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    p {
+      font-size: 18px;
+      color: $dark;
+      text-align: center;
+      font-weight: 600;
+
+      @media (min-width: $breakpoint-tablet) {
+        font-size: 24px;
+        color: $light;
+        font-weight: 400;
+      }
+    }
+
+    .aoa-slider-cta {
+      padding: 20px 40px;
+      font-size: 20px;
+      font-weight: 600;
+      border-radius: 100px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      background: $dark;
+      color: $light;
+
+      @media (min-width: $breakpoint-tablet) {
+        background: $light;
+        color: $dark;
+      }
+
+      &:hover {
+        background: $yellow;
+      }
+
+      i,
+      svg {
+        margin-right: 16px;
+      }
+    }
+  }
+}
