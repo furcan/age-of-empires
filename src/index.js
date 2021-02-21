@@ -15,7 +15,7 @@ const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk
 
 ReactDOM.render(
   <Provider store={store}>
-    <HashRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter basename={window?.location?.pathname || ''}>
       <React.StrictMode>
         <App />
       </React.StrictMode>
