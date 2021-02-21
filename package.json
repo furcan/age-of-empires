@@ -29,9 +29,7 @@
     "build-old": "react-scripts build",
     "build": "react-scripts build && rm -rf docs && mv build docs",
     "test": "PUBLIC_URL=/ react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy-old": "yarn build",
-    "deploy-old": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
