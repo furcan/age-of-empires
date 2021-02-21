@@ -25,10 +25,10 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "PUBLIC_URL=/ react-scripts start",
+    "start": "PUBLIC_URL=. react-scripts start",
     "build-old": "react-scripts build",
     "build": "react-scripts build && rm -rf docs && mv build docs",
-    "test": "PUBLIC_URL=/ react-scripts test",
+    "test": "PUBLIC_URL=. react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
