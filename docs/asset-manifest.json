@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "https://furcan.github.io/age-of-empires/static/css/main.79c7b399.chunk.css",
-    "main.js": "https://furcan.github.io/age-of-empires/static/js/main.18764786.chunk.js",
-    "main.js.map": "https://furcan.github.io/age-of-empires/static/js/main.18764786.chunk.js.map",
+    "main.js": "https://furcan.github.io/age-of-empires/static/js/main.c8a2415f.chunk.js",
+    "main.js.map": "https://furcan.github.io/age-of-empires/static/js/main.c8a2415f.chunk.js.map",
     "runtime-main.js": "https://furcan.github.io/age-of-empires/static/js/runtime-main.06d9a778.js",
     "runtime-main.js.map": "https://furcan.github.io/age-of-empires/static/js/runtime-main.06d9a778.js.map",
-    "static/js/2.d793d8af.chunk.js": "https://furcan.github.io/age-of-empires/static/js/2.d793d8af.chunk.js",
-    "static/js/2.d793d8af.chunk.js.map": "https://furcan.github.io/age-of-empires/static/js/2.d793d8af.chunk.js.map",
+    "static/js/2.f0c094bf.chunk.js": "https://furcan.github.io/age-of-empires/static/js/2.f0c094bf.chunk.js",
+    "static/js/2.f0c094bf.chunk.js.map": "https://furcan.github.io/age-of-empires/static/js/2.f0c094bf.chunk.js.map",
     "index.html": "https://furcan.github.io/age-of-empires/index.html",
     "static/css/main.79c7b399.chunk.css.map": "https://furcan.github.io/age-of-empires/static/css/main.79c7b399.chunk.css.map",
-    "static/js/2.d793d8af.chunk.js.LICENSE.txt": "https://furcan.github.io/age-of-empires/static/js/2.d793d8af.chunk.js.LICENSE.txt"
+    "static/js/2.f0c094bf.chunk.js.LICENSE.txt": "https://furcan.github.io/age-of-empires/static/js/2.f0c094bf.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.06d9a778.js",
-    "static/js/2.d793d8af.chunk.js",
+    "static/js/2.f0c094bf.chunk.js",
     "static/css/main.79c7b399.chunk.css",
-    "static/js/main.18764786.chunk.js"
+    "static/js/main.c8a2415f.chunk.js"
   ]
 }
