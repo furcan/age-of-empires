@@ -9,9 +9,7 @@ function NotFound(props) {
   const { history } = props;
 
   const goBack = () => {
-    if (history) {
-      history.goBack(-1);
-    }
+    history.goBack(-1);
   };
 
   return (
@@ -21,9 +19,7 @@ function NotFound(props) {
           <VscSearch />
         </div>
         <h1 className="aoe-404-title">404 - Not found</h1>
-        {history?.length &&
-          <button type="button" className="aoe-404-button" onClick={() => goBack()}>Go Back</button>
-        }
+        <button type="button" className="aoe-404-button" onClick={() => goBack()}>Go Back</button>
       </div>
     </Layout>
   );

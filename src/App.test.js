@@ -1,9 +1,9 @@
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router';
 import { render } from '@testing-library/react';
 import App from './App';
 
-test('renders without crashing', () => {
+test('The App has been rendered without crashing.', () => {
   const div = window.document.createElement('div');
-  render(<BrowserRouter><App /></BrowserRouter>, div);
+  render(<MemoryRouter><App /></MemoryRouter>, div);
   expect(div).toBeEmptyDOMElement();
 });

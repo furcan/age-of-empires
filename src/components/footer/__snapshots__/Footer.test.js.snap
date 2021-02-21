@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Footer component has been rendered as expected. 1`] = `
+<footer
+  className="aoe-footer"
+>
+  <p>
+    © 2021 Age of Empires. All rights reserved.
+  </p>
+</footer>
+`;
