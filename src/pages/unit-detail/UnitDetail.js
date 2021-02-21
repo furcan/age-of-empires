@@ -25,13 +25,11 @@ function UnitDetail(props) {
     return <NotFound />;
   }
 
-  console.log('UNIT_DETAIL: ', unit);
-
   return (
     <Layout>
       <div className="unit-detail">
         <div className="unit-banner">
-          <img src="/assets/images/aoe-home-background-filtered.png" width="1240" height="698" alt={unit?.name} />
+          <img src={`${process.env.PUBLIC_URL}/assets/images/aoe-home-background-filtered.png`} width="1240" height="698" alt={unit?.name} />
           <h1 className="unit-title">
             <span>{unit?.name}</span>
           </h1>

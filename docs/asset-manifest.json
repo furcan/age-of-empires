@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/age-of-empires/static/css/main.79c7b399.chunk.css",
-    "main.js": "/age-of-empires/static/js/main.d5d17858.chunk.js",
-    "main.js.map": "/age-of-empires/static/js/main.d5d17858.chunk.js.map",
-    "runtime-main.js": "/age-of-empires/static/js/runtime-main.ca40a825.js",
-    "runtime-main.js.map": "/age-of-empires/static/js/runtime-main.ca40a825.js.map",
-    "static/js/2.f0c094bf.chunk.js": "/age-of-empires/static/js/2.f0c094bf.chunk.js",
-    "static/js/2.f0c094bf.chunk.js.map": "/age-of-empires/static/js/2.f0c094bf.chunk.js.map",
-    "index.html": "/age-of-empires/index.html",
-    "static/css/main.79c7b399.chunk.css.map": "/age-of-empires/static/css/main.79c7b399.chunk.css.map",
-    "static/js/2.f0c094bf.chunk.js.LICENSE.txt": "/age-of-empires/static/js/2.f0c094bf.chunk.js.LICENSE.txt"
+    "main.css": "https://furcan.github.io/age-of-empires/static/css/main.79c7b399.chunk.css",
+    "main.js": "https://furcan.github.io/age-of-empires/static/js/main.e76b9ba4.chunk.js",
+    "main.js.map": "https://furcan.github.io/age-of-empires/static/js/main.e76b9ba4.chunk.js.map",
+    "runtime-main.js": "https://furcan.github.io/age-of-empires/static/js/runtime-main.06d9a778.js",
+    "runtime-main.js.map": "https://furcan.github.io/age-of-empires/static/js/runtime-main.06d9a778.js.map",
+    "static/js/2.f0c094bf.chunk.js": "https://furcan.github.io/age-of-empires/static/js/2.f0c094bf.chunk.js",
+    "static/js/2.f0c094bf.chunk.js.map": "https://furcan.github.io/age-of-empires/static/js/2.f0c094bf.chunk.js.map",
+    "index.html": "https://furcan.github.io/age-of-empires/index.html",
+    "static/css/main.79c7b399.chunk.css.map": "https://furcan.github.io/age-of-empires/static/css/main.79c7b399.chunk.css.map",
+    "static/js/2.f0c094bf.chunk.js.LICENSE.txt": "https://furcan.github.io/age-of-empires/static/js/2.f0c094bf.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.ca40a825.js",
+    "static/js/runtime-main.06d9a778.js",
     "static/js/2.f0c094bf.chunk.js",
     "static/css/main.79c7b399.chunk.css",
-    "static/js/main.d5d17858.chunk.js"
+    "static/js/main.e76b9ba4.chunk.js"
   ]
 }
