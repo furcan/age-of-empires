@@ -26,14 +26,13 @@ function FilterRanges(props) {
         </div>
 
         <div className="range-slider">
-          <input type="range" id="WoodRange" min="0" max="200" step="1" value={valueWood} onChange={rangeWoodHandler} onMouseDown={() => setMouseStateWood('down')} onMouseUp={() => setMouseStateWood('up')} onTouchStart={() => setMouseStateWood('down')} onTouchEnd={() => setMouseStateWood('up')} disabled={!costs.useWood} />
+          <input type="range" id="WoodRange" min="0" max="200" step="1" value={valueWood} onChange={rangeWoodHandler} onMouseDown={() => setMouseStateWood('down')} onMouseUp={() => setMouseStateWood('up')} onTouchStart={() => setMouseStateWood('down')} onTouchEnd={() => setMouseStateWood('up')} disabled={!costs?.useWood} />
           <label htmlFor="WoodRange">
             <FiInfo />
             <span>{`0 - ${valueWood}`}</span>
           </label>
         </div>
       </div>
-
 
       <div className="range-group">
         <div className="range-check">
@@ -42,7 +41,7 @@ function FilterRanges(props) {
         </div>
 
         <div className="range-slider">
-          <input type="range" id="FoodRange" min="0" max="200" step="1" value={valueFood} onChange={rangeFoodHandler} onMouseDown={() => setMouseStateFood('down')} onMouseUp={() => setMouseStateFood('up')} onTouchStart={() => setMouseStateWood('down')} onTouchEnd={() => setMouseStateWood('up')} disabled={!costs.useFood} />
+          <input type="range" id="FoodRange" min="0" max="200" step="1" value={valueFood} onChange={rangeFoodHandler} onMouseDown={() => setMouseStateFood('down')} onMouseUp={() => setMouseStateFood('up')} onTouchStart={() => setMouseStateWood('down')} onTouchEnd={() => setMouseStateWood('up')} disabled={!costs?.useFood} />
           <label htmlFor="FoodRange">
             <FiInfo />
             <span>{`0 - ${valueFood}`}</span>
@@ -57,7 +56,7 @@ function FilterRanges(props) {
         </div>
 
         <div className="range-slider">
-          <input type="range" id="GoldRange" min="0" max="200" step="1" value={valueGold} onChange={rangeGoldHandler} onMouseDown={() => setMouseStateGold('down')} onMouseUp={() => setMouseStateGold('up')} onTouchStart={() => setMouseStateWood('down')} onTouchEnd={() => setMouseStateWood('up')} disabled={!costs.useGold} />
+          <input type="range" id="GoldRange" min="0" max="200" step="1" value={valueGold} onChange={rangeGoldHandler} onMouseDown={() => setMouseStateGold('down')} onMouseUp={() => setMouseStateGold('up')} onTouchStart={() => setMouseStateWood('down')} onTouchEnd={() => setMouseStateWood('up')} disabled={!costs?.useGold} />
           <label htmlFor="GoldRange">
             <FiInfo />
             <span>{`0 - ${valueGold}`}</span>

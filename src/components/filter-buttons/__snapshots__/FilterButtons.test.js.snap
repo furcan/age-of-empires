@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The FilterButtons component has been rendered as expected. 1`] = `
+<div
+  className="buttons-wrapper"
+>
+  <button
+    className=""
+    name="All"
+    type="button"
+  >
+    <span>
+      All
+    </span>
+  </button>
+  <button
+    className=""
+    name="Dark"
+    type="button"
+  >
+    <span>
+      Dark
+    </span>
+  </button>
+  <button
+    className=""
+    name="Feudal"
+    type="button"
+  >
+    <span>
+      Feudal
+    </span>
+  </button>
+  <button
+    className=""
+    name="Castle"
+    type="button"
+  >
+    <span>
+      Castle
+    </span>
+  </button>
+  <button
+    className=""
+    name="Imperial"
+    type="button"
+  >
+    <span>
+      Imperial
+    </span>
+  </button>
+</div>
+`;
