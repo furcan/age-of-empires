@@ -8,6 +8,8 @@ export const costObjectToPlainText = (input) => {
 };
 // from the cost object to the plain text table data: end
 
+// empty data to dash: begin
 export const emptyData = (params) => {
   return params || '-';
 };
+// empty data to dash: end

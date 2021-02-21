@@ -14,7 +14,7 @@ exports[`The Header component has been rendered as expected. 1`] = `
         className="aoe-logo"
       >
         <img
-          alt="AOA Logo"
+          alt="AoE Logo"
           height="106"
           src="/assets/images/aoe-logo.png"
           width="200"

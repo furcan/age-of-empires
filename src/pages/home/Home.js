@@ -10,7 +10,7 @@ function Home() {
     <Layout>
       <div className="aoe-slider">
         <div className="aoe-slider-img">
-          <img src={`${process.env.PUBLIC_URL}/assets/images/aoe-home-background-filtered.png`} width="1240" height="698" alt="AOA Home Slider" />
+          <img src={`${process.env.PUBLIC_URL}/assets/images/aoe-home-background-filtered.png`} width="1240" height="698" alt="AoE Home Slider" />
         </div>
 
         <div className="aoe-slider-box">

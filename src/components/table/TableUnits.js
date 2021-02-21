@@ -7,6 +7,7 @@ import './TableUnits.scss';
 
 function TableUnits(props) {
   const { data } = props;
+
   return (
     <div className="units-table-wrapper">
       <table className="units-table">

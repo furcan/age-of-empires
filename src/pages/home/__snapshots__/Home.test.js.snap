@@ -17,7 +17,7 @@ exports[`The Home component has been rendered as expected. 1`] = `
           className="aoe-logo"
         >
           <img
-            alt="AOA Logo"
+            alt="AoE Logo"
             height="106"
             src="/assets/images/aoe-logo.png"
             width="200"
@@ -133,7 +133,7 @@ exports[`The Home component has been rendered as expected. 1`] = `
         className="aoe-slider-img"
       >
         <img
-          alt="AOA Home Slider"
+          alt="AoE Home Slider"
           height="698"
           src="/assets/images/aoe-home-background-filtered.png"
           width="1240"

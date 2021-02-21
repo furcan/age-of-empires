@@ -14,11 +14,9 @@ function UnitDetail(props) {
   const dispatch = useDispatch();
   const { unit } = useSelector(selectorUnits);
 
-  // fetch unit: begin
   useEffect(() => {
     dispatch(fetchUnit(unitId));
   }, [dispatch]);
-  // fetch unit: end
 
   if (unit === undefined) {
     return <NotFound />;

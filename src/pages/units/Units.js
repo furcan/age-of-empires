@@ -156,7 +156,7 @@ function Units() {
           <div className={`units-buttons ${loading ? 'units-loading' : ''}`}>
             <FilterButtons
               onClickHandler={filterAgesHandler}
-              classList={buttonClassesAge}
+              classListAge={buttonClassesAge}
             />
           </div>
         </div>

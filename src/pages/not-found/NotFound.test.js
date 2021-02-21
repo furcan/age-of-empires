@@ -1,6 +1,5 @@
 
 import { create, act } from 'react-test-renderer';
-import { createMemoryHistory } from 'history';
 import { MemoryRouter } from 'react-router';
 
 import NotFound from './NotFound';

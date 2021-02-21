@@ -12,6 +12,16 @@
     margin: 40px 0;
   }
 
+  .aoe-slider-img {
+    width: 100%;
+    min-height: 180px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   .aoe-slider-box {
     position: relative;
     display: flex;

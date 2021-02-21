@@ -10,7 +10,7 @@ function Header() {
       <div className="aoe-container">
         <div className="aoe-header-content">
           <div className="aoe-logo">
-            <img src={`${process.env.PUBLIC_URL}/assets/images/aoe-logo.png`} width="200" height="106" alt="AOA Logo" />
+            <img src={`${process.env.PUBLIC_URL}/assets/images/aoe-logo.png`} width="200" height="106" alt="AoE Logo" />
           </div>
           <nav className="aoe-navbar">
             <ul>

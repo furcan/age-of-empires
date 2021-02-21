@@ -1,7 +1,6 @@
 import MOCK_DATA from '../../mock/age-of-empires-units.json';
 
 export const selectorUnits = (state) => state.units;
-export const selectorState = (state) => state;
 
 export const PROCESSING = 'PROCESSING';
 export const FAILED = 'FAILED';
