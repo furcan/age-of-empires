@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { connect, useSelector, useDispatch } from 'react-redux';
-// import { FiHash } from 'react-icons/fi';
 
 import { selectorUnits, fetchUnit } from '../../redux/actions/unitsActions';
 import { emptyData } from '../../helpers/Helpers';
