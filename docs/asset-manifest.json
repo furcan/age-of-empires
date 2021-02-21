@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "https://furcan.github.io/age-of-empires/static/css/main.79c7b399.chunk.css",
-    "main.js": "https://furcan.github.io/age-of-empires/static/js/main.e76b9ba4.chunk.js",
-    "main.js.map": "https://furcan.github.io/age-of-empires/static/js/main.e76b9ba4.chunk.js.map",
+    "main.js": "https://furcan.github.io/age-of-empires/static/js/main.c1ff6a88.chunk.js",
+    "main.js.map": "https://furcan.github.io/age-of-empires/static/js/main.c1ff6a88.chunk.js.map",
     "runtime-main.js": "https://furcan.github.io/age-of-empires/static/js/runtime-main.06d9a778.js",
     "runtime-main.js.map": "https://furcan.github.io/age-of-empires/static/js/runtime-main.06d9a778.js.map",
     "static/js/2.f0c094bf.chunk.js": "https://furcan.github.io/age-of-empires/static/js/2.f0c094bf.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.06d9a778.js",
     "static/js/2.f0c094bf.chunk.js",
     "static/css/main.79c7b399.chunk.css",
-    "static/js/main.e76b9ba4.chunk.js"
+    "static/js/main.c1ff6a88.chunk.js"
   ]
 }
