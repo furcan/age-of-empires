@@ -1,6 +1,7 @@
 @import "../../styles/_variables";
 
 .unit-detail {
+  transition: opacity 0.25s ease-in-out;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -13,6 +14,10 @@
 
   @media (min-width: $breakpoint-tablet) {
     margin: 20px auto 40px;
+  }
+
+  &.unit-loading {
+    opacity: 0.5;
   }
 
   .unit-banner {

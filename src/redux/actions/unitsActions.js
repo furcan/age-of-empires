@@ -4,8 +4,8 @@ export const selectorUnits = (state) => state.units;
 
 export const PROCESSING = 'PROCESSING';
 export const FAILED = 'FAILED';
-export const SUCCEEDED_UNITS = 'SUCCEEDED_UNITS';
-export const SUCCEEDED_UNIT = 'SUCCEEDED_UNIT';
+export const SUCCEEDED_UNITLIST = 'SUCCEEDED_UNITLIST';
+export const SUCCEEDED_UNITDETAIL = 'SUCCEEDED_UNITDETAIL';
 
 export const processing = () => ({
   type: PROCESSING,
@@ -15,14 +15,14 @@ export const failed = () => ({
   type: FAILED,
 });
 
-export const succeededUnits = (data) => ({
-  type: SUCCEEDED_UNITS,
-  payload: data,
+export const succeededUnitList = (list) => ({
+  type: SUCCEEDED_UNITLIST,
+  payload: list,
 });
 
-export const succeededUnit = (unit) => ({
-  type: SUCCEEDED_UNIT,
-  payload: unit,
+export const succeededUnitDetail = (item) => ({
+  type: SUCCEEDED_UNITDETAIL,
+  payload: item,
 });
 
 export function fetchUnits() {
@@ -37,7 +37,7 @@ export function fetchUnits() {
 
       // a dummy delay to demonstrate the loading state
       setTimeout(() => {
-        dispatch(succeededUnits(data));
+        dispatch(succeededUnitList(data));
       }, 500);
 
     } catch (error) {
@@ -73,7 +73,7 @@ export function filterUnits(age, costs) {
 
       // a dummy delay to demonstrate the loading state
       setTimeout(() => {
-        dispatch(succeededUnits(data));
+        dispatch(succeededUnitList(data));
       }, 500);
 
     } catch (error) {
@@ -94,7 +94,11 @@ export function fetchUnit(id) {
 
       const unit = data.find(x => x.id === id);
 
-      dispatch(succeededUnit(unit));
+      // a dummy delay to demonstrate the loading state
+      setTimeout(() => {
+        dispatch(succeededUnitDetail(unit));
+      }, 500);
+
     } catch (error) {
       dispatch(failed());
     }

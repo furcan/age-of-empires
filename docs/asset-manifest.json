@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/age-of-empires/static/css/main.bdd10567.chunk.css",
-    "main.js": "/age-of-empires/static/js/main.2a51b023.chunk.js",
-    "main.js.map": "/age-of-empires/static/js/main.2a51b023.chunk.js.map",
+    "main.css": "/age-of-empires/static/css/main.acbb42f7.chunk.css",
+    "main.js": "/age-of-empires/static/js/main.36b86198.chunk.js",
+    "main.js.map": "/age-of-empires/static/js/main.36b86198.chunk.js.map",
     "runtime-main.js": "/age-of-empires/static/js/runtime-main.ca40a825.js",
     "runtime-main.js.map": "/age-of-empires/static/js/runtime-main.ca40a825.js.map",
     "static/js/2.f0c094bf.chunk.js": "/age-of-empires/static/js/2.f0c094bf.chunk.js",
     "static/js/2.f0c094bf.chunk.js.map": "/age-of-empires/static/js/2.f0c094bf.chunk.js.map",
     "index.html": "/age-of-empires/index.html",
-    "static/css/main.bdd10567.chunk.css.map": "/age-of-empires/static/css/main.bdd10567.chunk.css.map",
+    "static/css/main.acbb42f7.chunk.css.map": "/age-of-empires/static/css/main.acbb42f7.chunk.css.map",
     "static/js/2.f0c094bf.chunk.js.LICENSE.txt": "/age-of-empires/static/js/2.f0c094bf.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ca40a825.js",
     "static/js/2.f0c094bf.chunk.js",
-    "static/css/main.bdd10567.chunk.css",
-    "static/js/main.2a51b023.chunk.js"
+    "static/css/main.acbb42f7.chunk.css",
+    "static/js/main.36b86198.chunk.js"
   ]
 }

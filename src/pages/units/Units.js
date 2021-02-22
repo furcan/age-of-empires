@@ -16,7 +16,7 @@ import './Units.scss';
 function Units() {
 
   const dispatch = useDispatch();
-  const { data, loading, error } = useSelector(selectorUnits);
+  const { unitList, loading, error } = useSelector(selectorUnits);
 
   // filter => ages: begin
   const [filterAge, setFilterAge] = useState('All');
@@ -51,8 +51,8 @@ function Units() {
     if (loading) return <TableLoading />;
     if (error) return <TableError />;
     return (
-      data?.length > 0 ?
-        <TableUnits data={data} />
+      unitList?.length > 0 ?
+        <TableUnits data={unitList} />
         :
         <TableNoData />
     );
@@ -197,10 +197,4 @@ function Units() {
   );
 }
 
-const mapStateToProps = (state) => ({
-  loading: state.units.loading,
-  error: state.units.error,
-  data: state.units.data,
-});
-
-export default connect(mapStateToProps)(Units);
+export default connect()(Units);
